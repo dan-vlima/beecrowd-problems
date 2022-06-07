@@ -8,7 +8,8 @@ var average = ((a * 3.5) + (b * 7.5)) / 11;
 
 console.log(`MEDIA = ${average.toFixed(5)}`)
 
-/* Beecrowd answer
+/* 
+Beecrowd answer
 
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var grade = input.split('\n');
@@ -18,5 +19,4 @@ var b = grades.shift(7.1);
 var average = ((a * 3.5) + (b * 7.5)) / 11;
 
 console.log(`MEDIA = ${average.toFixed(5)}`)
-
 */
