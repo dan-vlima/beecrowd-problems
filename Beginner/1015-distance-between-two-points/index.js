@@ -2,8 +2,12 @@
 
 var input = require('fs').readFileSync('1015-distance-between-two-points/dev/stdin', 'utf8');
 
-/* In the snippet below, I noticed that input.split(' ') was breaking the lines. In order to fix this, I 
-passed a RegEx as a param to split(), combinating both ' ' and \n as a param*/
+/* 
+In the snippet below, I noticed that input.split(' ') was merging the second and third values 
+coming from the input file, stdin. It happened because in the ending of line 1 there's no space 
+to be split by the split() method. In order to fix this, I passed a RegEx as a param to split(), 
+combinating both ' ' and \n as a param
+*/
 
 var lines = input.split(/[\n' ']/);
 
