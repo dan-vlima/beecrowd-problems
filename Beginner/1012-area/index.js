@@ -21,5 +21,4 @@ console.log(`CIRCULO: ${circle.toFixed(3)}`);
 console.log(`TRAPEZIO: ${trapezium.toFixed(3)}`);
 console.log(`QUADRADO: ${square.toFixed(3)}`);
 console.log(`RETANGULO: ${rectangle.toFixed(3)}`);
-
 */
