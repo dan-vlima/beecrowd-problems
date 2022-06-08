@@ -9,13 +9,13 @@ to be split by the split() method. In order to fix this, I passed a RegEx as a p
 combinating both ' ' and \n as a param
 */
 
-var lines = input.split(/[\n' ']/);
+var lines = input.split("\n");
 
 const calcDistance = (...lines) => {
-    const x1 = Number(lines[0]);
-    const y1 = Number(lines[1]);
-    const x2 = Number(lines[2]);
-    const y2 = Number(lines[3]);
+    const [x1, y1] = lines[0].split(" ").map(Number);
+    console.log(x1)
+    const [x2, y2] = lines[1].split(" ").map(Number);
+    console.log(x2)
     const squareOfDifferenceX = (x2 - x1) ** 2;
     const squareOfDifferenceY = (y2 - y1) ** 2;
     const distance = Math.sqrt(squareOfDifferenceX + squareOfDifferenceY);
@@ -23,5 +23,7 @@ const calcDistance = (...lines) => {
 };
 
 const distance = calcDistance(...lines);
+
+
 
 console.log(distance.toFixed(4)); 
