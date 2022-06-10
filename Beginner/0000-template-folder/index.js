@@ -1,0 +1,1 @@
+// // In order to submit this answer on Beecrowd, change the path to /dev/stdin

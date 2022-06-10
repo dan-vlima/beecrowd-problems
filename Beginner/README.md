@@ -1,1 +1,0 @@
-A list of Beecrowd problems with answers both in VSCode and Beecrowd sandbox.
