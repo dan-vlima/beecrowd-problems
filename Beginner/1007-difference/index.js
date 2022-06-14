@@ -1,28 +1,16 @@
-// VSCode answer
+const filePath = __dirname.split("\\").pop() + "/dev/stdin";
+const input = require("fs").readFileSync(filePath, "utf8");
 
-var lines = [5, 6, 7, 8]
+// Down below, the code you must insert on Beecrowd
 
-var a = lines[0];
-var b = lines[1];
-var c = lines[2];
-var d = lines[3];
-
-var difference = a * b - c * d;
-
-console.log(`DIFERENCA = ${difference}`)
-
-/* 
-Beecrowd answer
-
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
-var a = lines.shift(5);
-var b = lines.shift(6);
-var c = lines.shift(7);
-var d = lines.shift(8);
+const calcDifference = (lines) => {
+    const [value1, value2, value3, value4] = lines.map(Number)
+    const difference = (value1 * value2) - (value3 * value4);
+    return difference;
+};
 
-var difference = a * b - c * d;
+const answer = calcDifference(lines);
 
-console.log(`DIFERENCA = ${difference}`);
-*/
+console.log(`DIFERENCA = ${answer}`);

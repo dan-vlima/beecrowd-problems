@@ -1,26 +1,13 @@
-// VSCode answer
-
-var lines = [150.00];
-
-const pi = 3.14159;
-const R = lines[0];
-const A = pi * (R * R);
-
-var result = A;
-
-console.log("A = " + result.toFixed(4));
-
-/* 
-Beecrowd answer
-
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var input = require('fs').readFileSync('1002-area-of-a-circle/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
-const pi = 3.14159;
-const r = lines.shift(150.00);
-const a = pi * (r * r);
+const calcCircleArea = (lines) => {
+    const pi = 3.14159;
+    const radius = Number(lines[0]);
+    const circleArea = pi * Math.pow(radius, 2);
+    return circleArea;
+};
 
-var result = a;
+const answer = calcCircleArea(lines);
 
-console.log("A=" + result.toFixed(4));
-*/
+console.log(`A=${answer.toFixed(4)}`);

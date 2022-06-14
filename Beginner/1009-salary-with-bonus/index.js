@@ -1,27 +1,17 @@
-// VSCode answer
+const filePath = __dirname.split("\\").pop() + "/dev/stdin";
+const input = require("fs").readFileSync(filePath, "utf8");
 
-var lines = ["JOAO", 500.00, 1230.30]
+// Down below, the code you must insert on Beecrowd
 
-var sellerName = lines[0];
-var fixedSalary = lines[1];
-var totalSales = lines[2];
-var salesCommission = totalSales * 0.15;
-
-var totalSalary = fixedSalary + salesCommission;
-
-console.log(`TOTAL = R$ ${totalSalary.toFixed(2)}`);
-
-/* 
-Beecrowd answer
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
-var sellerName = lines.shift("JOAO");
-var fixedSalary = parseFloat(lines.shift(500.00));
-var totalSales = parseFloat(lines.shift(1230.30));
-var salesCommission = parseFloat(totalSales * 0.15);
+const calcTotalSalary = (lines) => {
+    const [sellerName, fixedSalary, totalSales] = lines.map(Number);
+    const salesCommission = totalSales * 0.15;
+    const totalSalary = fixedSalary + salesCommission;
+    return totalSalary;
+};
 
-var totalSalary = fixedSalary + salesCommission;
+const totalSalary = calcTotalSalary(lines);
 
 console.log(`TOTAL = R$ ${totalSalary.toFixed(2)}`);
-*/

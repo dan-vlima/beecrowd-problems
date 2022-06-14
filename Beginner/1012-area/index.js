@@ -1,24 +1,53 @@
-/* 
-Uncompleted code below:
-Beecrowd answer
+const filePath = __dirname.split("\\").pop() + "/dev/stdin";
+const input = require("fs").readFileSync(filePath, "utf8");
 
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.split('\n');
+// Down below, the code you must insert on Beecrowd
 
-const pi = 3.14159;
-var a = parseFloat(lines.shift(3.0));
-var b = parseFloat(lines.shift(4.0));
-var c = parseFloat(lines.shift(5.2));
+var lines = input.split(" ");
 
-var triangle = ( a * c ) / 2;
-var circle = ( pi * c * c);
-var trapezium = (( a + b) * c) / 2;
-var square = b * b;
-var rectangle = a * b;
+const calcRectangledTriangleArea = (lines) => {
+    const [a, b, c] = lines.map(Number);
+    const rectangledTriangleArea = (a * c) / 2;
+    return rectangledTriangleArea;
+};
 
-console.log(`TRIANGULO: ${triangle.toFixed(3)}`);
-console.log(`CIRCULO: ${circle.toFixed(3)}`);
-console.log(`TRAPEZIO: ${trapezium.toFixed(3)}`);
-console.log(`QUADRADO: ${square.toFixed(3)}`);
-console.log(`RETANGULO: ${rectangle.toFixed(3)}`);
-*/
+const calcCircleArea = (lines) => {
+    const pi = 3.14159;
+    const [a, b, c] = lines.map(Number);
+    const circleArea = (pi * c * c);
+    return circleArea;
+};
+
+const calcTrapeziumArea = (lines) => {
+    const [a, b, c] = lines.map(Number);
+    const trapeziumArea = ((a + b) * c) / 2;
+    return trapeziumArea;
+};
+
+const calcSquareArea = (lines) => {
+    const [a, b, c] = lines.map(Number);
+    const squareArea = b * b;
+    return squareArea;
+};
+
+const calcRectangleArea = (lines) => {
+    const [a, b, c] = lines.map(Number);
+    const rectangleArea = a * b;
+    return rectangleArea;
+};
+
+const rectangledTriangleArea = calcRectangledTriangleArea(lines);
+
+const circleArea = calcCircleArea(lines);
+
+const trapeziumArea = calcTrapeziumArea(lines);
+
+const squareArea = calcSquareArea(lines);
+
+const rectangleArea = calcRectangleArea(lines);
+
+console.log(`TRIANGULO: ${rectangledTriangleArea.toFixed(3)}`);
+console.log(`CIRCULO: ${circleArea.toFixed(3)}`);
+console.log(`TRAPEZIO: ${trapeziumArea.toFixed(3)}`);
+console.log(`QUADRADO: ${squareArea.toFixed(3)}`);
+console.log(`RETANGULO: ${rectangleArea.toFixed(3)}`);

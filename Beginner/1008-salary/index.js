@@ -1,28 +1,25 @@
-// VSCode answer
+const { execPath } = require("process");
 
-var lines = [25, 100, 5.50];
+const filePath = __dirname.split("\\").pop() + "/dev/stdin";
+const input = require("fs").readFileSync(filePath, "utf8");
 
-var employeeNumber = parseInt(lines[0]);
-var workedHours = parseInt(lines[1]);
-var hourlyPay = lines[2];
-var monthlySalary = workedHours * hourlyPay;
+// Down below, the code you must insert on Beecrowd
 
-console.log(`NUMBER = ${employeeNumber}`);
-console.log(`SALARY = U$ ${monthlySalary.toFixed(2)}`);
-
-
-/* 
-Beecrowd answer
-
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
-var employeeNumber = parseInt(lines.shift(25));
-var workedHours = parseInt(lines.shift(100));
-var hourlyPay = lines.shift(5.50);
-var monthlySalary = workedHours * hourlyPay;
+const calcEmployeeSalary = (lines) => {
+    const [ monthlyWorkedHours, hourlySalary ] = [lines[1], lines[2]];
+    const employeeSalary = monthlyWorkedHours * hourlySalary;
+    return employeeSalary;
+};
 
-console.log(`NUMBER = ${employeeNumber}`);
-console.log(`SALARY = U$ ${monthlySalary.toFixed(2)}`);
+const getEmployeeNumber = (lines) => {
+    const employeeNumber = Number(lines[0]);
+    return employeeNumber;
+};
 
-*/
+const employeeNumber = getEmployeeNumber(lines);
+
+const employeeSalary = calcEmployeeSalary(lines);
+
+console.log(`NUMBER = ${employeeNumber}\nSALARY = U$ ${employeeSalary.toFixed(2)}`);

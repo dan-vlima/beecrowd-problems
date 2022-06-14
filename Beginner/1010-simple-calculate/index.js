@@ -11,7 +11,7 @@ combinating both ' ' and \n as a param
 
 var lines = input.split(/[\n' ']/);
 
-const calcTotalPrice = (...lines) => {
+const calcTotalPrice = (lines) => {
     const codeOfProduct1 = Number(lines[0]);
     const unitsOfProduct1 = Number(lines[1]);
     const priceOfProduct1 = Number(lines[2]);
@@ -22,6 +22,6 @@ const calcTotalPrice = (...lines) => {
     return totalPrice;
 };
 
-const totalPrice = calcTotalPrice(...lines);
+const totalPrice = calcTotalPrice(lines);
 
 console.log(`VALOR A PAGAR: R$ ${totalPrice.toFixed(2)}`); 

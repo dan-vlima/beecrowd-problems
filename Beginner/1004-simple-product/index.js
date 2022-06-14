@@ -1,20 +1,16 @@
-var lines = [3, 9];
+const filePath = __dirname.split("\\").pop() + "/dev/stdin";
+const input = require("fs").readFileSync(filePath, "utf8");
 
-var a = lines[0];
-var b = lines[1];
-var prod = a * b;
+// Down below, the code you must insert on Beecrowd
 
-console.log("SOMA = " + prod);
-
-/* Beecrowd answer
-
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
-var b = parseInt(lines.shift(3));
-var a = parseInt(lines.shift(9));
-var prod = a * b;
+const calcProduct = (lines) => {
+    const [a, b] = lines;
+    const productAB = Number(a) * Number(b);
+    return productAB;
+};
 
-console.log("PROD = " + prod)
+const answer = calcProduct(lines);
 
-*/
+console.log(`PROD = ${answer}`);

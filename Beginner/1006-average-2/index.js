@@ -1,25 +1,16 @@
-// VSCode answer
+const filePath = __dirname.split("\\").pop() + "/dev/stdin";
+const input = require("fs").readFileSync(filePath, "utf8");
 
-var grades = [5.0, 6.0, 7.0];
+// Down below, the code you must insert on Beecrowd
 
-var a = grades[0];
-var b = grades[1];
-var c = grades[2];
-var average = ((a * 2) + (b * 3) + (c * 5)) / 10;
+var lines = input.split('\n');
 
-console.log(`MEDIA = ${average.toFixed(1)}`)
+const calcWeightedAverage = (lines) => {
+    const [dividend1, dividend2, dividend3] = lines.map(Number);
+    var weightedAverage = ((dividend1 * 2) + (dividend2 * 3) + (dividend3 * 5)) / 10;
+    return weightedAverage;
+};
 
-/* 
-Beecrowd answer
+const answer = calcWeightedAverage(lines);
 
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var grades = input.split('\n');
-
-var a = grades.shift(5.0);
-var b = grades.shift(6.0);
-var c = grades.shift(7.0);
-var average = ((a * 2) + (b * 3) + (c * 5)) / 10;
-
-console.log(`MEDIA = ${average.toFixed(1)}`)
-
-*/
+console.log(`MEDIA = ${answer.toFixed(1)}`);
