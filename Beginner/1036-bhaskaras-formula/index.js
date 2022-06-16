@@ -17,10 +17,10 @@ const calculateRoot1 = (lines) => {
     const divider = 2 * a;
     const negativeB = b * (-1);
     const root1 = (negativeB + Math.sqrt(delta)) / (divider);
-    if ((delta > 0) && (divider >= 0)) {
+    if ((delta > 0) && (divider > 0)) {
         return root1
     } else {
-        console.log(`Impossivel calcular`)
+        return undefined
     }
 
 };
@@ -31,10 +31,10 @@ const calculateRoot2 = (lines) => {
     const divider = 2 * a;
     const negativeB = b * (-1);
     const root2 = (negativeB - Math.sqrt(delta)) / (divider);
-    if ((delta > 0) && (divider >= 0)) {
+    if ((delta > 0) && (divider > 0)) {
         return root2;
     } else {
-        console.log(`Impossivel calcular`)
+        return undefined;
     }
 };
 
@@ -42,4 +42,12 @@ const bhaskaraRoot1 = calculateRoot1(lines);
 
 const bhaskaraRoot2 = calculateRoot2(lines);
 
-console.log(`R1 = ${bhaskaraRoot1.toFixed(5)}\nR2 = ${bhaskaraRoot2.toFixed(5)}`);
+const isNumber1 = typeof bhaskaraRoot1; 
+
+const isNumber2 = typeof bhaskaraRoot2; 
+
+if ((isNumber1 !== undefined) && (isNumber2 !== undefined)) {
+    console.log(`R1 = ${Number(bhaskaraRoot1).toFixed(5)}\nR2 = ${Number(bhaskaraRoot2).toFixed(5)}`);
+} else {
+    console.log('Impossivel calcular');
+}

@@ -5,13 +5,13 @@ const input = require("fs").readFileSync(filePath, "utf8");
 
 var lines = input.split('\n');
 
-const calcSum = (lines) => {
-    const a = Number(lines[0]);
-    const b = Number(lines[1]);
+const calcSum = (lines: string) => {
+    const a: number = Number(lines[0]);
+    const b: number = Number(lines[1]);
     const sumAB = a + b;
     return sumAB;
 };
 
-const answer = calcSum(lines);
+const answer: number = calcSum(lines);
 
 console.log(`X = ${answer}`);
