@@ -1,4 +1,4 @@
-var input = require('fs').readFileSync('./1014-consumption/stdin', 'utf8');
+var input = require('fs').readFileSync('./1014-consumption/dev/stdin', 'utf8');
 var lines = input.split("\n");
 
 const calcAverageConsumption = (...lines) => {
